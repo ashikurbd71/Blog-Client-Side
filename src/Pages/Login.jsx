@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import login from '../assets/login.json'
 import Lottie from 'lottie-react';
 import bg from '../../public/login-bg.png'
@@ -11,6 +11,9 @@ const Login = () => {
     const {loginuser,user}=Useauth()
     const [email,setEmail] = useState('')
  const [password,setPassword] = useState('')
+
+ const location = useLocation()
+ const navigate = useNavigate()
 
  console.log(user)
  const handlelogin = async e => {
@@ -34,6 +37,8 @@ const Login = () => {
   await loginuser(email,password)
 
   toast.success('login successfuly!',{id : userid})
+
+  navigate(location?.state? location?.state : '/')
     }
     catch(err){
 

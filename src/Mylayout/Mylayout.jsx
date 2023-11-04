@@ -2,8 +2,23 @@ import React from 'react';
 import Footer from '../Component/Footer';
 import logo from '../assets/logo.png'
 import { Link, NavLink } from 'react-router-dom';
+import Useauth from '../Hooks/Useauth';
 
 const Mylayout = ({children}) => {
+
+  const{user,logout} = Useauth()
+
+  const handlelogout = () => {
+
+      try{
+        logout()
+      }
+      catch(err){
+
+        console.log(err)
+      }
+  }
+
     return (
         <div>
           <div className="drawer">
@@ -97,8 +112,16 @@ const Mylayout = ({children}) => {
       </div>
 
       <div className='ml-20 '>
- <Link to={"/login"}><button className="btn btn-sm btn-outline btn-info mr-3">LOGIN</button></Link>
-<Link to={'/register'}> <button className="btn btn-sm mr-3 btn-outline btn-success">REGISTER</button></Link>
+        
+   {
+    user ? <button onClick={handlelogout} className="btn btn-sm btn-outline btn-info mr-3">LOGOUT</button>:
+
+    <div>
+       <Link to={"/login"}><button className="btn btn-sm btn-outline btn-info mr-3">LOGIN</button></Link>
+    <Link to={'/register'}> <button className="btn btn-sm mr-3 btn-outline btn-success">REGISTER</button></Link>
+    </div>
+    
+   }
 
  </div>
     </div>

@@ -9,6 +9,7 @@ import Featuredblog from '../Pages/Featuredblog';
 import Wishlist from '../Pages/Wishlist';
 import Login from '../Pages/Login';
 import Register from '../Pages/Register';
+import Privteroute from './Privteroute';
 
 const router = createBrowserRouter([
 
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/addblog',
-                element:<Addblog/>
+                element:<Privteroute><Addblog/></Privteroute>
             },
             {
                 path:'/feature',
