@@ -7,7 +7,11 @@ const App = () => {
     <div>
 
      <Mylayout>
-      <Outlet/>
+
+        <div className='max-w-[1200px] mx-auto min-h-screen'>
+        <Outlet/>
+        </div>
+        
      </Mylayout>
 
     </div>
