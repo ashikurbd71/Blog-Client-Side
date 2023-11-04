@@ -11,9 +11,9 @@ const Banner = () => {
         backgroundPosition: "center",
       }}
     >
-      <div className="py-20 w-full max-w-[1200px] lg:px-0 px-10 flex lg:flex-row flex-col items-center  mx-auto">
+      <div className="py-20 w-full max-w-[1200px] lg:px-0 px-10 justify-center flex lg:flex-row flex-col items-center  mx-auto">
         <div className="sp space-y-4">
-          <h1 className="lg:text-6xl text-3xl font-bold text-[#FFFFFF]">Create a Blog.</h1>
+          <h1 className="lg:text-6xl text-4xl font-bold text-[#FFFFFF]">Create a Blog.</h1>
           <p className="text-[#F5F5F5] font-bold text-lg">
             Share your story with the world. Stand out with a
             professionally-designed blog website that can be customized to fit
