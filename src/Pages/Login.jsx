@@ -3,17 +3,43 @@ import { Link } from 'react-router-dom';
 import login from '../assets/login.json'
 import Lottie from 'lottie-react';
 import bg from '../../public/login-bg.png'
+import Useauth from '../Hooks/Useauth';
+import toast from 'react-hot-toast';
+import Media from '../Component/Media';
 const Login = () => {
 
+    const {loginuser,user}=Useauth()
     const [email,setEmail] = useState('')
  const [password,setPassword] = useState('')
 
- const handlelogin =  e => {
-
+ console.log(user)
+ const handlelogin = async e => {
+ 
     e.preventDefault()
 
+    
+  
+    if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+        return toast.error("provide right email!");
+      }
+  
+      if (password.length < 6) {
+        return toast.error("password must be 6 chracter!");
+      }
+    
     console.log(email,password)
+   const userid =  toast.loading('Login...')
 
+    try{
+  await loginuser(email,password)
+
+  toast.success('login successfuly!',{id : userid})
+    }
+    catch(err){
+
+        console.log(err)
+        toast.error(err.message,{id : userid})
+    }
 }
 
     return (
@@ -40,7 +66,7 @@ const Login = () => {
             <div>
               <label
                 htmlFor="email"
-                className="block mb-2    dark:text-white  text-[#fff] font-semibold text-[20px]"
+                className="block mb-2    dark:text-white  text-[#fff] font-semibold text-[18px]"
               >
                 Email address
               </label>
@@ -58,7 +84,7 @@ const Login = () => {
             <div>
               <label
                 htmlFor="password"
-                className="block mb-2   text-[#fff] font-semibold text-[20px]dark:text-white "
+                className="block mb-2   text-[#fff] font-semibold text-[18px] dark:text-white "
               >
                 Password
               </label>
@@ -117,7 +143,7 @@ const Login = () => {
                 </a>
               </Link>
             </div>
-            {/* <Media></Media> */}
+       <Media/>
           </form>
         </div>
 

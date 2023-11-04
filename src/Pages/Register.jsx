@@ -3,18 +3,44 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import login from '../assets/login.json'
 import bg from '../../public/login-bg.png'
+import Useauth from '../Hooks/Useauth';
+import toast from 'react-hot-toast';
+import Media from '../Component/Media';
 
 const Register = () => {
 
-
+   const {createuser,user} = Useauth()
     const [email,setEmail] = useState('')
     const [password,setPassword] = useState('')
+console.log(user)
 
-
-    const handleregister = async e => {
+    const handleregister =  e => {
 
         e.preventDefault()
+
+        if (password.length < 6) {
+            return toast.error("Password Must Be 6 Chracter!");
+          } else if (!/[A-Z]/.test(password)) {
+            return toast.error("one letter must be upercase!");
+          } else if (!/[\W_]/.test(password)) {
+            return toast.error("one letter must be  special character!");
+          }
+
+
+        const userid = toast.loading('register...')
         console.log(email,password)
+
+        try{
+
+        createuser(email,password)
+
+        toast.success('Register Successfuly!',{id : userid})
+        }
+        catch(err){
+
+            console.log(err)
+            toast.error(err.message,{id : userid})
+        }
     }
 
     return (
@@ -40,7 +66,7 @@ const Register = () => {
             <div>
               <label
                 htmlFor="text"
-                className="block mb-2    dark:text-white  text-[#fff] font-semibold text-[20px]"
+                className="block mb-2    dark:text-white  text-[#fff] font-semibold text-[18px]"
               >
                  Your Number
               </label>
@@ -58,7 +84,7 @@ const Register = () => {
             <div>
               <label
                 htmlFor="text"
-                className="block mb-2    dark:text-white  text-[#fff] font-semibold text-[20px]"
+                className="block mb-2    dark:text-white  text-[#fff] font-semibold text-[18px]"
               >
                  Photo URL
               </label>
@@ -78,7 +104,7 @@ const Register = () => {
             <div>
               <label
                 htmlFor="email"
-                className="block mb-2    dark:text-white  text-[#fff] font-semibold text-[20px]"
+                className="block mb-2    dark:text-white  text-[#fff] font-semibold text-[18px]"
               >
                 Email address
               </label>
@@ -95,7 +121,7 @@ const Register = () => {
             <div>
               <label
                 htmlFor="password"
-                className="block mb-2   text-[#fff] font-semibold text-[20px]dark:text-white "
+                className="block mb-2   text-[#fff] font-semibold text-[18px] dark:text-white "
               >
                 Password
               </label>
@@ -154,7 +180,7 @@ const Register = () => {
             </div>
 
            
-            {/* <Media></Media> */}
+            <Media/>
           </form>
         </div>
       </div>
