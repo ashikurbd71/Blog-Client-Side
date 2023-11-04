@@ -6,12 +6,12 @@ const App = () => {
   return (
     <div>
 
-     <Mylayout>
+     <Mylayout className=''>
 
-        <div className='max-w-[1200px] mx-auto min-h-screen'>
+        <div className='min-h-screen '>
         <Outlet/>
         </div>
-        
+
      </Mylayout>
 
     </div>
