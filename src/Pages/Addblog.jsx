@@ -24,7 +24,7 @@ const Addblog = () => {
               
                 return toast.success('Blog Added Successfuly!')
             }
-
+        e.target.reset()
           
         })
         e.target.reset

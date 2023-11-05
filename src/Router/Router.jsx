@@ -10,6 +10,7 @@ import Wishlist from '../Pages/Wishlist';
 import Login from '../Pages/Login';
 import Register from '../Pages/Register';
 import Privteroute from './Privteroute';
+import Wishdetails from '../Component/Wishdetails';
 
 const router = createBrowserRouter([
 
@@ -38,6 +39,11 @@ const router = createBrowserRouter([
             {
                 path:'/wishlist',
                 element:<Wishlist/>
+            },
+            {
+                path:'/wishdetails/:id',
+                element:<Wishdetails/>,
+                loader:({params}) => fetch(`http://localhost:5000/addlist/${params.id}`)
             }
 
         ]

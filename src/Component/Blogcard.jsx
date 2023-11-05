@@ -1,5 +1,7 @@
 import axios from 'axios';
 import React from 'react';
+import toast from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 
 const Blogcard = ({blog}) => {
 
@@ -16,7 +18,13 @@ const Blogcard = ({blog}) => {
    const  handlelist = () => {
 
      axios.post('http://localhost:5000/addlist',addData)
-     .then(res =>  console.log(res.data))
+     .then(res =>  {console.log(res.data)
+    
+        if(res.data.insertedId){
+
+            return toast.success('Blog Added Wishlist!')
+        }
+    })
 
    }
      
@@ -27,11 +35,11 @@ const Blogcard = ({blog}) => {
   <div className="card-body">
     <h2 className="card-title">
      {blog?.title}
-      <div className="badge badge-secondary">{blog?.category}</div>
+      <div className="badge text-xl font-samibold p-3 badge-secondary">{blog?.category}</div>
     </h2>
     <p>{blog?.short_description}</p>
     <div className="card-actions justify-end">
-    <button className="btn btn-outline btn-secondary">Details</button> 
+    <Link to={`/wishdetails/${blog?._id}`}><button className="btn btn-outline btn-secondary">Details</button> </Link>
       <button onClick={handlelist} className="btn btn-outline btn-secondary">wishlist</button>
     </div>
   </div>

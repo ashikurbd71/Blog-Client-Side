@@ -8,7 +8,7 @@ const App = () => {
 
      <Mylayout className=''>
 
-        <div className='min-h-screen px-5 lg:px-0  '>
+        <div className='min-h-screen    '>
         <Outlet/>
         </div>
 

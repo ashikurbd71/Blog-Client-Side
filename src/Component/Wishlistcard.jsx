@@ -1,21 +1,63 @@
-import React from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
-const Wishlistcard = ({wishcard}) => {
+const Wishlistcard = ({wishcard,refetch}) => {
     console.log(wishcard)
+
+    const hanledelete = (_id) => {
+
+
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+
+                axios.delete(`http://localhost:5000/addlist/${_id}`)
+                .then(res => {console.log(res.data)
+                
+                if(res.data.deletedCount > 0){
+
+                  
+                    Swal.fire(
+                        'Deleted!',
+                        'Your Blog has been deleted.',
+                        'success')
+                }
+                refetch()
+                })
+             
+          
+            }
+      
+
+    })
+
+}
     return (
         <div>
-            <div className="card lg:card-side bg-base-100 shadow-xl">
-  <figure><img src="/images/stock/photo-1494232410401-ad00d5433cfa.jpg" alt="Album"/></figure>
+            <div className="card  lg:card-side bg-base-100  shadow-xl">
+  <figure><img src= {wishcard?.image} className='w-full h-full' alt="Album"/></figure>
   <div className="card-body">
-    <h2 className="card-title">New album is released!</h2>
-    <p>Click the button to listen on Spotiwhy app.</p>
+    <h2 className="card-title">{wishcard?.title}</h2>
+
+    <div className="badge text-xl font-samibold p-3 badge-secondary">{wishcard?.category}</div>
+    <p>{wishcard?.short_description}</p>
     <div className="card-actions justify-end">
-      <button className="btn btn-primary">Listen</button>
+   <Link to={`/wishdetails/${wishcard?._id}`}> <button className="btn btn-outline btn-secondary">Details</button> </Link>
+      <button onClick={() => hanledelete(wishcard?._id)} className="btn btn-outline btn-secondary">Remove</button>
     </div>
   </div>
 </div>
         </div>
-    );
-};
+    )
+}
 
-export default Wishlistcard;
+export default Wishlistcard
