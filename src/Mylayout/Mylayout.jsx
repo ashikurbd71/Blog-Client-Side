@@ -112,11 +112,31 @@ const Mylayout = ({children}) => {
       </div>
 
       <div className='ml-20 '>
+
+      {
+
+user ?  <div className="dropdown dropdown-end mr-5">
+<label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+  <div className="w-10 rounded-full">
+    <img src={user?.photoURL} />
+  </div>
+</label>
+<ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-[#007CFD] rounded-box w-52">
+  
+  <li className="text-xl font-semibold"><h1>{user?.displayName}</h1></li>
+  <li className="text-xl font-semibold"><h1>{user?.email}</h1></li>
+ 
+   
+
+</ul>
+</div> : ''
+   
+}
         
    {
     user ? <button onClick={handlelogout} className="btn btn-sm btn-outline btn-info mr-3">LOGOUT</button>:
 
-    <div>
+    <div className='flex gap-3 items-center'>
        <Link to={"/login"}><button className="btn btn-sm btn-outline btn-info mr-3">LOGIN</button></Link>
     <Link to={'/register'}> <button className="btn btn-sm mr-3 btn-outline btn-success">REGISTER</button></Link>
     </div>

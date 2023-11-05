@@ -1,17 +1,23 @@
 import Lottie from 'lottie-react';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import login from '../assets/login.json'
 import bg from '../../public/login-bg.png'
 import Useauth from '../Hooks/Useauth';
 import toast from 'react-hot-toast';
 import Media from '../Component/Media';
+import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
 
    const {createuser,user} = Useauth()
     const [email,setEmail] = useState('')
     const [password,setPassword] = useState('')
+    const [name,setName] = useState('')
+    const [photo,setPhoto] = useState('')
+
+    const location = useLocation()
+    const navigate = useNavigate()
 console.log(user)
 
     const handleregister =  e => {
@@ -34,7 +40,20 @@ console.log(user)
 
         createuser(email,password)
 
+        const currentUser = user
+
+        updateProfile(currentUser,{
+          displayName: name,
+           photoURL: photo
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
+
+
         toast.success('Register Successfuly!',{id : userid})
+
+        navigate(location?.state ? location?.state : '/')
+          
         }
         catch(err){
 
@@ -49,7 +68,7 @@ console.log(user)
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}>
-           <div className="px-5 lg:px-0 lg:flex-row  flex-col-reverse min-h min-h-screen flex justify-center items-center">
+           <div className="px-5 pt-10  lg:px-0 lg:flex-row  flex-col-reverse min-h min-h-screen flex justify-center items-center">
 
        <div>
        <Lottie animationData={login} className='mr-10'></Lottie>
@@ -73,7 +92,7 @@ console.log(user)
               <input
                 type="text"
                 name="name"
-             
+                onBlur={(e) => setName(e.target.value)} 
                 id="name"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                 placeholder="Enter your email address"
@@ -91,7 +110,7 @@ console.log(user)
               <input
                 type="text"
                 name="photo"
-             
+               onBlur={(e) => setPhoto(e.target.value)} 
                 id="photo"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                 placeholder="Enter your email address"
