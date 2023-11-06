@@ -1,12 +1,13 @@
 import Lottie from 'lottie-react';
 import React, { useState } from 'react';
-import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import login from '../assets/login.json'
 import bg from '../../public/login-bg.png'
 import Useauth from '../Hooks/Useauth';
 import toast from 'react-hot-toast';
 import Media from '../Component/Media';
 import { updateProfile } from 'firebase/auth';
+
 
 const Register = () => {
 
@@ -39,20 +40,38 @@ console.log(user)
         try{
 
         createuser(email,password)
+        .then((userCredential) => {
+          // Signed up 
+          const user = userCredential.user;
+  
+          toast.success('Register Successfuly!',{id : userid})
 
-        const currentUser = user
+          navigate(location?.state ? location?.state : '/')
+          const currentUser = user
+  
+          
+  
+          updateProfile(currentUser,{
+                    displayName: name,
+                     photoURL: photo
+                  })
+  
+                  .then(result => console.log(result.user))
+                  .then(error => console.log(error))
+  
+          console.log(user)
+          e.target.reset()
+          // toast.success("Successfully Registaion!!")
+          // ...
+        }) .catch((error) => {
+       
+          console.log(error)
+          return toast.error(error.message);
+      
+          // ..
+        });
 
-        updateProfile(currentUser,{
-          displayName: name,
-           photoURL: photo
-        })
-        .then(res => res.json())
-        .then(data => console.log(data))
 
-
-        toast.success('Register Successfuly!',{id : userid})
-
-        navigate(location?.state ? location?.state : '/')
           
         }
         catch(err){

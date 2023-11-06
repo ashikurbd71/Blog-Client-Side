@@ -43,9 +43,11 @@ const Wishlistcard = ({wishcard,refetch}) => {
 }
     return (
         <div>
-            <div className="card  lg:card-side bg-base-100  shadow-xl">
+            <div className="card flex lg:flex-row flex-col justify-between bg-base-100  shadow-xl">
+  <div className='flex-1'>
   <figure><img src= {wishcard?.image} className='w-full h-full' alt="Album"/></figure>
-  <div className="card-body">
+  </div>
+  <div className="card-body flex-1">
     <h2 className="card-title">{wishcard?.title}</h2>
 
     <div className="badge text-xl font-samibold p-3 badge-secondary">{wishcard?.category}</div>
