@@ -78,7 +78,7 @@ const Details = () => {
           <p>{details?.long_description}</p>
           <div className="card-actions justify-end">
          {
-          user?.email == details.user ? <Link to={`/update/${details?._id}`}><button className="btn btn-outline btn-secondary">Update</button></Link> : ''
+          user?.email == details.users ?  <Link to={`/update/${details?._id}`}><button className="btn btn-outline btn-secondary">Update</button></Link>: ''
          }
           <Link to={'/'}><button className="btn btn-outline btn-secondary">Back</button></Link>
           </div>
@@ -94,13 +94,13 @@ const Details = () => {
       </div>
     
       {
-          user?.email == details.user ?  <div className='max-w-[1200px] mx-auto my-10'>
+          user?.email == details?.users ?  '' : <div className='max-w-[1200px] mx-auto my-10'>
           <form onSubmit={handlecomment} className='flex flex-col'>
           <textarea className="textarea textarea-info w-[400px]" name='comment' placeholder="type here"></textarea>
          
           <button type="submit" className="btn btn-outline btn-secondary mt-5 w-[400px]"> Comment </button>
           </form>
-        </div>: ''
+        </div>  
          }
     
      
