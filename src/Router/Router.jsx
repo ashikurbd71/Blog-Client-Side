@@ -54,7 +54,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/update/:id',
-                element:<Update/>,
+                element:<Privteroute><Update/></Privteroute>,
                 loader: ({params}) => fetch(`http://localhost:5000/allblogs/${params.id}`)
             },
             

@@ -2,8 +2,10 @@ import React from 'react';
 import bg from '../../public/login-bg.png'
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import Useauth from '../Hooks/Useauth';
 const Addblog = () => {
 
+  const{user} = Useauth()
     const handleadd = e => {
         e.preventDefault()
         const title = e.target.title.value.toLowerCase()
@@ -11,10 +13,11 @@ const Addblog = () => {
         const category = e.target.category.value.toLowerCase()
         const short_description = e.target.short_description.value
         const long_description = e.target.long_description.value
+        const user = e.target.user.value
     
         
         const productinfo = {
-            title,image,category,short_description,long_description
+            title,image,category,short_description,long_description,user
         }
         console.log(productinfo)
     
@@ -60,7 +63,15 @@ const Addblog = () => {
     <input type="text" placeholder="Enter Title" name="title" className="input input-bordered w-full" />
   </label>
 </div>
+<div className="form-control lg:ml-5">
+  <label className="label">
+    <span className="label-text">User</span>
+  </label>
+  <label className="input-group">
 
+    <input type="text" defaultValue={user?.email} placeholder="Enter Title" name="user" className="input input-bordered w-full" />
+  </label>
+</div>
 <div className="form-control lg:w-1/2 lg:ml-4">
   <label className="label">
     <span className="label-text">Image url</span>

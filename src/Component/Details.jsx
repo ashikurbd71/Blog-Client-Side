@@ -1,8 +1,9 @@
 
 import { Link, useLoaderData } from 'react-router-dom';
 import bg from '../../public/login-bg.png'
+import Useauth from '../Hooks/Useauth';
 const Details = () => {
-
+  const{user}=Useauth()
     const details = useLoaderData()
 
     console.log(details)
@@ -25,7 +26,9 @@ const Details = () => {
           <h2 className='text-lg font-semibold'>{details?.short_description}</h2>
           <p>{details?.long_description}</p>
           <div className="card-actions justify-end">
-          <Link to={`/update/${details?._id}`}><button className="btn btn-outline btn-secondary">Update</button></Link>
+         {
+          user?.email == details.user ? <Link to={`/update/${details?._id}`}><button className="btn btn-outline btn-secondary">Update</button></Link> : ''
+         }
           <Link to={'/'}><button className="btn btn-outline btn-secondary">Back</button></Link>
           </div>
         </div>
