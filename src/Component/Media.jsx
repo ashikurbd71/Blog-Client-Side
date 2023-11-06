@@ -2,10 +2,13 @@ import React from 'react';
 import toast from 'react-hot-toast';
 import { FaGoogle } from 'react-icons/fa';
 import Useauth from '../Hooks/Useauth';
+import { useLocation, useNavigate } from 'react-router-dom';
 const Media = () => {
 
     const{googlesignin} = Useauth()
 
+    const location = useLocation()
+    const navigate =useNavigate()
     const handleprovider = media => {
 
         googlesignin(media)
@@ -16,7 +19,7 @@ const Media = () => {
    
           toast.success("Successfully login")
         
-        //   navigate(location?.state ? location?.state : "/")
+          navigate(location?.state ? location?.state : "/")
         
           // ...
         })

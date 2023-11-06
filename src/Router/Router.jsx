@@ -12,6 +12,7 @@ import Register from '../Pages/Register';
 import Privteroute from './Privteroute';
 import Wishdetails from '../Component/Wishdetails';
 import Details from '../Component/Details';
+import Update from '../Pages/Update';
 
 const router = createBrowserRouter([
 
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/allblog',
-                element:<Allblog/>
+                element:<Privteroute><Allblog/></Privteroute>
             },
             {
                 path:'/addblog',
@@ -49,8 +50,15 @@ const router = createBrowserRouter([
             {
                 path:'/details/:id',
                 element:<Details/>,
-                loader: () => fetch('')
-            }
+                loader: ({params}) => fetch(`http://localhost:5000/allblogs/${params.id}`)
+            },
+            {
+                path:'/update/:id',
+                element:<Update/>,
+                loader: ({params}) => fetch(`http://localhost:5000/allblogs/${params.id}`)
+            },
+            
+
 
         ]
     },
