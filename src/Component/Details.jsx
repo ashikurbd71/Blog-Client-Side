@@ -2,6 +2,10 @@
 import { Link, useLoaderData } from 'react-router-dom';
 import bg from '../../public/login-bg.png'
 import Useauth from '../Hooks/Useauth';
+import axios from 'axios';
+import toast from 'react-hot-toast';
+import { useQuery } from '@tanstack/react-query';
+import Commentscard from './Commentscard';
 const Details = () => {
   const{user}=Useauth()
     const details = useLoaderData()
@@ -13,8 +17,36 @@ const Details = () => {
     const comment = e.target.comment.value
     const username = user?.displayName
     const userimg = user?.photoURL
-    console.log(comment,username,userimg)
+   
+    const commentss = {comment,username,userimg}
+    console.log(commentss)
+
+    axios.post('http://localhost:5000/comments',commentss)
+    .then(res => {console.log(res.data)
+    if(res.data.insertedId){
+
+      toast.success('Thank For Your Comment!')
+    }
+    })
    }
+
+   const {data,isLoading,isFetching,refetch} = useQuery({
+
+    queryKey: ["commnet"],
+    queryFn: async () => {
+
+        const data = await fetch('http://localhost:5000/comments')
+        return await data.json()
+    }
+ })
+
+ console.log(data)
+
+ if(isLoading){
+
+  return <span className="loading loading-dots loading-lg"></span>
+ }
+
     return (
 
         <>
@@ -60,33 +92,41 @@ const Details = () => {
      
      
       </div>
-      <div className='max-w-[1200px] mx-auto my-10'>
-        <form onSubmit={handlecomment} className='flex flex-col'>
-        <textarea className="textarea textarea-info w-[400px]" name='comment' placeholder="type here"></textarea>
-       
-        <button type="submit" className="btn btn-outline btn-secondary mt-5 w-[400px]"> Comment </button>
-        </form>
-      </div>
+    
+      {
+          user?.email == details.user ?  <div className='max-w-[1200px] mx-auto my-10'>
+          <form onSubmit={handlecomment} className='flex flex-col'>
+          <textarea className="textarea textarea-info w-[400px]" name='comment' placeholder="type here"></textarea>
+         
+          <button type="submit" className="btn btn-outline btn-secondary mt-5 w-[400px]"> Comment </button>
+          </form>
+        </div>: ''
+         }
+    
+     
 
 
-        <div className='max-w-[1200px] mx-auto'>
-          <div className='p-5  rounded-lg  lg:w-[500px]'>
-          
-          <div className='flex gap-3'>
-          <div className="avatar">
-  <div className="w-10 rounded-full">
-    <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-  </div>
-</div>
 
- <h2 className='text-lg font-medium text-[#F000B8]'>User</h2>
-          </div>
+  <>
 
-<p className='text-xl p-3 font-medium'>hhhhh</p>
-          </div>
+     <div>
+       <h1 className='lg:text- mt-20 text-2xl font-bold text-center'>U S E R C O M M E N T S</h1>
+       <hr className=''/>
+     </div>
+   <div className='grid grid-cols-1  mt-10 gap-2 px-5 lg:px-0'>
 
-           
-        </div>
+     {
+      data?.map(data =>    
+        
+        <Commentscard data={data} key={data._id}></Commentscard>
+        
+        
+        )
+     }
+   </div>
+   </>
+     
+     
       </div>
      
       </>  
