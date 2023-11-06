@@ -8,7 +8,7 @@ const Addblog = () => {
         e.preventDefault()
         const title = e.target.title.value
         const image = e.target.image.value
-        const category = e.target.category.value
+        const category = e.target.category.value.toLowerCase()
         const short_description = e.target.short_description.value
         const long_description = e.target.long_description.value
     

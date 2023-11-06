@@ -11,6 +11,7 @@ import Login from '../Pages/Login';
 import Register from '../Pages/Register';
 import Privteroute from './Privteroute';
 import Wishdetails from '../Component/Wishdetails';
+import Details from '../Component/Details';
 
 const router = createBrowserRouter([
 
@@ -44,6 +45,11 @@ const router = createBrowserRouter([
                 path:'/wishdetails/:id',
                 element:<Wishdetails/>,
                 loader:({params}) => fetch(`http://localhost:5000/addlist/${params.id}`)
+            },
+            {
+                path:'/details/:id',
+                element:<Details/>,
+                loader: () => fetch('')
             }
 
         ]
