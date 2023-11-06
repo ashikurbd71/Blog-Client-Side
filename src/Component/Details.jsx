@@ -7,6 +7,14 @@ const Details = () => {
     const details = useLoaderData()
 
     console.log(details)
+   const handlecomment = (e) => {
+
+    e.preventDefault()
+    const comment = e.target.comment.value
+    const username = user?.displayName
+    const userimg = user?.photoURL
+    console.log(comment,username,userimg)
+   }
     return (
 
         <>
@@ -47,9 +55,38 @@ const Details = () => {
 
 
        </div>
+
+    
      
      
       </div>
+      <div className='max-w-[1200px] mx-auto my-10'>
+        <form onSubmit={handlecomment} className='flex flex-col'>
+        <textarea className="textarea textarea-info w-[400px]" name='comment' placeholder="type here"></textarea>
+       
+        <button type="submit" className="btn btn-outline btn-secondary mt-5 w-[400px]"> Comment </button>
+        </form>
+      </div>
+
+
+        <div className='max-w-[1200px] mx-auto'>
+          <div className='p-5  rounded-lg  lg:w-[500px]'>
+          
+          <div className='flex gap-3'>
+          <div className="avatar">
+  <div className="w-10 rounded-full">
+    <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+  </div>
+</div>
+
+ <h2 className='text-lg font-medium text-[#F000B8]'>User</h2>
+          </div>
+
+<p className='text-xl p-3 font-medium'>hhhhh</p>
+          </div>
+
+           
+        </div>
       </div>
      
       </>  
