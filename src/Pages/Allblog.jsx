@@ -28,6 +28,25 @@ const Allblog = () => {
 
      const [searchQuery, setSearchQuery] = useState('');
     const [blogpost,setBlogpost]=useState()
+    const [searchtitle,setSearchtitle]=useState('')
+
+    const handletitle = () => {
+
+        const searchResults = blogpost?.filter((post) =>
+        post.title.toLowerCase().includes(searchtitle.toLowerCase())
+      );
+    
+      if(searchResults.length === 0){
+    
+        return (
+    
+    
+        Swal.fire('Search Again!'))
+        
+       }
+    
+       setBlogpost(searchResults)
+    }
 
       const handlechngs = () => {
 
@@ -70,19 +89,20 @@ const Allblog = () => {
           range. Whatever you seek, find it here at SQUARESPACE. Your
           go-to destination for all things exceptional.</p>
        </div>
-       <div className='max-w-[1200px] flex justify-center  py-6'>
-    <div>
-    {/* <input type="text" value={searchQuery}
-     onChange={(e) => setSearchQuery(e.target.value)}
-     placeholder="Search by cetagory"
-   
-     className="input input-bordered rounded-none lg:w-[400px] pr-16" />  */}
 
-<select name="category"  onChange={(e) => setSearchQuery(e.target.value)}  value={searchQuery} className='input input-bordered w-[400px] rounded-none' id="">
+
+
+       <div className='max-w-[1200px]   py-6'>
+
+    <div className='flex justify-center mb-5'>
+    
+    <div>
+<select name="category" placeholder='serch by category' onChange={(e) => setSearchQuery(e.target.value)}  value={searchQuery} className='input input-bordered rounded-none' id="">
+         <option value="Foods"></option>
+        <option value="Food">Food</option>
         <option value="Technology">Technology</option>
         <option value="Travel">Travel</option>
         <option value="Health">Health </option>
-        <option value="Food">Food </option>
         <option value="Personal ">Personal </option>
         <option value="Lifestyle">Lifestyle</option>
         <option value="Finance">Finance</option>
@@ -92,8 +112,23 @@ const Allblog = () => {
         
     </select>
 
+       
         <button onClick={handlechngs}  className="btn btn-primary absolute bg-[#E2136E] border-none rounded-l-none">Search</button>
+        </div>
+   
     </div>
+
+    
+    <div className='flex justify-center'>
+        <div>
+        <input type="text" value={searchtitle}
+     onChange={(e) => setSearchtitle(e.target.value)}
+     placeholder="Search by title"
+   
+     className="input input-bordered rounded-none lg:w-[400px] pr-16" /> 
+  <button onClick={handletitle}  className="btn btn-primary absolute bg-[#E2136E] border-none rounded-l-none">Search</button>
+        </div>
+        </div>
  </div>
 
        </div>

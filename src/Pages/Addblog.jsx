@@ -6,7 +6,7 @@ const Addblog = () => {
 
     const handleadd = e => {
         e.preventDefault()
-        const title = e.target.title.value
+        const title = e.target.title.value.toLowerCase()
         const image = e.target.image.value
         const category = e.target.category.value.toLowerCase()
         const short_description = e.target.short_description.value

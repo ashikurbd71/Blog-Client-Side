@@ -25,7 +25,7 @@ const Blogsection = () => {
         backgroundPosition: "center",
       }}>
       <div className="text-center space-y-3 ">
-        <h1 className="lg:text-4xl text-3xl  font-bold">BLOG SECTION</h1>
+        <h1 className="lg:text-4xl text-3xl  font-bold">R E C E N T   B L O G S</h1>
          <div className="flex justify-center">
          <p className="text-xl w-[70%] ">
           Ensure that the short description accurately represents the content of
