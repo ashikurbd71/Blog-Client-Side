@@ -25,7 +25,7 @@ const Mylayout = ({children}) => {
   <input id="my-drawer-3" type="checkbox" className="drawer-toggle" /> 
   <div className="drawer-content flex flex-col">
     {/* Navbar */}
-    <div className="w-full px-[20px] navbar bg-[#000000] text-[#fff]">
+    <div className="w-full px-[10px] navbar bg-[#000000] text-[#fff]">
       <div className="flex-none lg:hidden">
         <label htmlFor="my-drawer-3" aria-label="open sidebar" className="btn btn-square btn-ghost">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
@@ -33,8 +33,8 @@ const Mylayout = ({children}) => {
       </div> 
       <div className="flex-1  px-2 mx-2">
 
-   <img src={logo} alt="" className='w-10' />
-   <Link to={'/'}><h1 className='lg:text-2xl text-xl font-bold'>SQUARESPACE</h1></Link>
+   <img src={logo} alt="" className='w-8' />
+   <Link to={'/'}><h1 className='lg:text-2xl text-lg font-bold'>SQUARESPACE</h1></Link>
 
       </div>
       <div className="flex-none hidden lg:block">
@@ -111,11 +111,11 @@ const Mylayout = ({children}) => {
 
       </div>
 
-      <div className='ml-20 '>
+      <div className='ml-5 '>
 
       {
 
-user ?  <div className="dropdown dropdown-end mr-5">
+user ?  <div className="dropdown dropdown-end mr-3">
 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
   <div className="w-10 rounded-full">
     <img src={user?.photoURL} />
@@ -137,8 +137,8 @@ user ?  <div className="dropdown dropdown-end mr-5">
     user ? <button onClick={handlelogout} className="btn btn-sm btn-outline btn-info mr-3">LOGOUT</button>:
 
     <div className='flex gap-3 items-center'>
-       <Link to={"/login"}><button className="btn btn-sm btn-outline btn-info mr-3">LOGIN</button></Link>
-    <Link to={'/register'}> <button className="btn btn-sm mr-3 btn-outline btn-success">REGISTER</button></Link>
+       <Link to={"/login"}><button className="btn btn-sm btn-outline btn-info mr-2">LOGIN</button></Link>
+    <Link to={'/register'}> <button className="btn btn-sm mr btn-outline btn-success">REGISTER</button></Link>
     </div>
     
    }

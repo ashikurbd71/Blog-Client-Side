@@ -11,7 +11,7 @@ const Details = () => {
 
         <>
 
-        <div className='h-full pt-20' style={{
+        <div className='h-full pt-20 pb-10 px-5' style={{
         backgroundImage: `url(${bg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
