@@ -4,6 +4,7 @@ import Allblogscard from '../Component/Allblogscard';
 import {  useEffect, useState } from 'react';
 import bg1 from '../../public/blcard-bg.png'
 import Swal from 'sweetalert2';
+import { motion } from "framer-motion"
 const Allblog = () => {
 
 
@@ -17,7 +18,8 @@ const Allblog = () => {
     //         return await data.json()
     //     }
     //  })
-
+    const [blogpost,setBlogpost]=useState()
+    console.log(blogpost)
     useEffect(() => {
 
          fetch('http://localhost:5000/allblogs')
@@ -27,7 +29,7 @@ const Allblog = () => {
     },[])
 
      const [searchQuery, setSearchQuery] = useState('');
-    const [blogpost,setBlogpost]=useState()
+  
     const [searchtitle,setSearchtitle]=useState('')
 
     const handletitle = () => {

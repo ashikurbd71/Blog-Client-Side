@@ -3,6 +3,7 @@ import bg from "../../public/blcard-bg.png";
 import Lottie from "lottie-react";
 import news from '../assets/news.json'
 import toast from "react-hot-toast";
+import { motion } from "framer-motion"
 
 const Newsletter = () => {
 
@@ -41,11 +42,11 @@ toast.success('Thank you for subscribing to our newsletter')
           <div className="flex jus lg:flex-row flex-col justify-between gap-10 items-center">
 
 
-       <div>
+       <motion.div animate={{ x: -20 ,scale:1}} initial={{scale:0}} transition={{delay:1}}>
   <Lottie animationData={news} loop={false} autoplay={false} className="flex-1"></Lottie>
-       </div>
+       </motion.div>
 
- <div>
+ <motion.div animate={{ x: -40 }}  transition={{delay:1}}>
  <form onSubmit={handlefrom} className="flex-1 mb-10">
         <div className="form-control w-[400px]">
 
@@ -60,7 +61,7 @@ toast.success('Thank you for subscribing to our newsletter')
         <button className="btn btn-outline text-2xl fon-bold btn-secondary"><input type="button" value="Subcribe" /></button>
         </div>
       </form>
- </div>
+ </motion.div>
 
           </div>
       </div>

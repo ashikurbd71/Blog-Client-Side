@@ -1,7 +1,7 @@
 import bg from '../../public/blcard-bg.png'
 import bg1 from '../../public/contact-us.jpg'
 import about from '../../public/contact.png'
-
+import { motion } from "framer-motion"
 const Contact = () => {
     return (
         <>
@@ -34,7 +34,8 @@ const Contact = () => {
             Warm and welcoming, encouraging a friendly greeting
             </h1>
   
-            <form className="card-body">
+  <motion.div animate={{ x: -40 }}  transition={{delay:1}}>
+  <form className="card-body">
         <div className="form-control">
           <label className="label">
          
@@ -46,11 +47,13 @@ const Contact = () => {
         <button className="btn btn-outline btn-secondary">Send</button>
         </div>
       </form>
+  </motion.div>
+           
           </div>
 
-          <div className="flex-1">
+          <motion.div animate={{ x: -20 ,scale:1}} initial={{scale:0}} transition={{delay:1}} className="flex-1">
             <img src={about} alt="" className="w-[600px]" />
-          </div>
+          </motion.div>
         </div>
       </>
     );

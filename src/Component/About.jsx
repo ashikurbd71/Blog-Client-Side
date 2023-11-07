@@ -2,6 +2,7 @@ import React from "react";
 import bg from "../../public/about.jpg";
 import about from "../../public/about-img.png";
 import bg1 from "../../public/blcard-bg.png";
+import { motion } from "framer-motion"
 const About = () => {
   return (
     <>
@@ -27,11 +28,11 @@ const About = () => {
           backgroundPosition: "center",
         }}
       >
-        <div className="flex-1">
+        <motion.div  animate={{ x: -20 ,scale:1}} initial={{scale:0}} transition={{delay:1}} className="flex-1">
           <img src={about} alt="" className="w-[600px]" />
-        </div>
+        </motion.div>
 
-        <div className="flex-1">
+        <motion.div animate={{ x: -40 }}  transition={{delay:1}} className="flex-1">
           <h1 className="lg:text-3xl text-xl font-bold ">
             Simple and straightforward indicating <br /> an introduction to your
             identit
@@ -45,7 +46,7 @@ const About = () => {
             the blog. Highlight your motivations, experiences, or expertise in
             the niche you're covering.
           </p>
-        </div>
+        </motion.div>
       </div>
     </>
   );

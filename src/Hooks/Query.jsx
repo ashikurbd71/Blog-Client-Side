@@ -4,7 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 const Query = () => {
     const {data,isLoading,isFetching,refetch} = useQuery({
 
-        queryKey: ["news"],
+        queryKey: ["newsall"],
         queryFn: async () => {
     
             const data = await fetch('http://localhost:5000/blogs')

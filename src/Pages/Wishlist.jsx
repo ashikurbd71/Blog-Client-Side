@@ -57,7 +57,8 @@ const Wishlist = () => {
           }
          <div className='max-w-[1200px] gap-6 mx-auto py-8 px-5 lg:px-0 grid grid-cols-1'>
           {
-             data?.map(wishcard => <Wishlistcard refetch={refetch} wishcard={wishcard} key={wishcard._id}></Wishlistcard>)
+           data?.map(wishcard => <Wishlistcard refetch={refetch} wishcard={wishcard} key={wishcard._id}></Wishlistcard>) 
+        
           }
 
          

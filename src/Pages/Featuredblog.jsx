@@ -10,7 +10,7 @@ const Featuredblog = () => {
         queryFn: async () => {
     
             const data = await fetch('http://localhost:5000/allblogs')
-            return await data.json()
+            return await data?.json()
         }
      })
 
@@ -30,7 +30,7 @@ const Featuredblog = () => {
         const top10Descriptions = sortedDescriptions?.slice(0, 10);
     
         setBlog(top10Descriptions);
-      }, []);
+      }, [data]);
     
      console.log(data)
 
@@ -45,17 +45,17 @@ const Featuredblog = () => {
         },
         {
           name : 'Blog Title',
-          selector:row => row.title,
+          selector:row => row?.title,
           sortable:true
         },
         {
           name : 'Blog Owner',
-          selector:row => row.owner,
+          selector:row => row?.owner,
           sortable:true
         },
         {
             name : 'Owner',
-            selector: row => <img src={row.userimg} alt="" className='w-[50%]' />,
+            selector: row => <img src={row?.userimg} alt="" className='w-[50%]' />,
             sortable:true
           }
   

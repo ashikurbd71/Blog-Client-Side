@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
-
+import { motion } from "framer-motion"
 const Blogcard = ({blog}) => {
 
     const title = blog?.title
@@ -29,7 +29,7 @@ const Blogcard = ({blog}) => {
    }
      
     return (
-        <div className=' '>
+        <motion.div animate={{ x: -20 ,scale:1}} initial={{scale:0}} transition={{delay:1}} className=' '>
             <div className="card w-full h-[500px]  bg-base-100 shadow-xl">
   <figure><img src= {blog?.image} alt="Shoes" className='w-full h-[250px]' /></figure>
   <div className="card-body">
@@ -44,7 +44,7 @@ const Blogcard = ({blog}) => {
     </div>
   </div>
 </div>
-        </div>
+        </motion.div>
     );
 };
 

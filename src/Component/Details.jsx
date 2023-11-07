@@ -76,7 +76,17 @@ const Details = () => {
           <div className="badge text-xl font-samibold p-3 badge-secondary">{details?.category}</div>
           <h2 className='text-lg font-semibold'>{details?.short_description}</h2>
           <p>{details?.long_description}</p>
+
+          <div className="rating mt-5">
+  <input type="radio" name="rating-1" className="mask mask-star" />
+  <input type="radio" name="rating-1" className="mask mask-star" checked />
+  <input type="radio" name="rating-1" className="mask mask-star" />
+  <input type="radio" name="rating-1" className="mask mask-star" />
+  <input type="radio" name="rating-1" className="mask mask-star" />
+</div>
           <div className="card-actions justify-end">
+
+         
          {
           user?.email == details.users ?  <Link to={`/update/${details?._id}`}><button className="btn btn-outline btn-secondary">Update</button></Link>: ''
          }
@@ -110,7 +120,7 @@ const Details = () => {
   <>
 
      <div>
-       <h1 className='lg:text- mt-20 text-2xl font-bold text-center'>U S E R C O M M E N T S</h1>
+       <h1 className='lg:text-3xl mt-20 text-2xl font-bold text-center'>Comments : {data?.length}</h1>
        <hr className=''/>
      </div>
    <div className='grid grid-cols-1  mt-10 gap-2 px-5 lg:px-0'>
