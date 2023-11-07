@@ -4,7 +4,9 @@ import Allblogscard from '../Component/Allblogscard';
 import {  useEffect, useState } from 'react';
 import bg1 from '../../public/blcard-bg.png'
 import Swal from 'sweetalert2';
-import { motion } from "framer-motion"
+import load from '../assets/loading.json'
+import Lottie from 'lottie-react';
+
 const Allblog = () => {
 
 
@@ -22,7 +24,7 @@ const Allblog = () => {
     console.log(blogpost)
     useEffect(() => {
 
-         fetch('http://localhost:5000/allblogs')
+         fetch('http://localhost:5000/allblogs',{credentials:'include'})
          .then(res => res.json())
          .then(data => setBlogpost(data))
 
@@ -146,7 +148,11 @@ const Allblog = () => {
 
         <div className='grid lg:grid-cols-3 grid-cols-1 px-5 lg:px-0 gap-5 max-w-[1200px] mx-auto py-10'>
         {
-            blogpost?.map(blog => <Allblogscard  blog={blog} key={blog?._id}></Allblogscard>)
+           blogpost?.length > 0 ?  blogpost?.map(blog => <Allblogscard  blog={blog} key={blog?._id}></Allblogscard>) :
+
+          <div className='flex jus justify-center min-h-screen'>
+     <Lottie animationData={load}></Lottie>
+          </div>
         }
         </div>
         </div>

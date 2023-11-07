@@ -23,7 +23,7 @@ const Addblog = () => {
         }
         console.log(productinfo)
     
-        axios.post('http://localhost:5000/addblog',productinfo)
+        axios.post('http://localhost:5000/addblog',productinfo,{withCredentials:true})
         .then(res => {console.log(res.data)
             if(res.data.insertedId){
               

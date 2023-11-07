@@ -9,7 +9,7 @@ const Featuredblog = () => {
         queryKey: ["table"],
         queryFn: async () => {
     
-            const data = await fetch('http://localhost:5000/allblogs')
+            const data = await fetch('http://localhost:5000/allblogs',{credentials:'include'})
             return await data?.json()
         }
      })
@@ -34,14 +34,17 @@ const Featuredblog = () => {
     
      console.log(data)
 
-     
-     const columns =[
     
-
+     const columns  =[
+    
+  
         {
+
+          
           name : 'Number',
-          selector: (row, index) => index + 1,
+          selector : (row, index)  => index + 1,
           sortable:true
+          
         },
         {
           name : 'Blog Title',
@@ -69,7 +72,7 @@ const Featuredblog = () => {
             <h1 className='text-3xl font-bold text-center my-5'>Top Blogs</h1>
             <hr />
            </div>
-        <div className='max-w-[1200px] my-20 mx-auto'>
+        <div className=' lg:w-[1000px] my-20 mx-auto'>
         
         <DataTable
             

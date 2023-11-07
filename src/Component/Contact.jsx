@@ -34,7 +34,7 @@ const Contact = () => {
             Warm and welcoming, encouraging a friendly greeting
             </h1>
   
-  <motion.div animate={{ x: -40 }}  transition={{delay:1}}>
+  <motion.div animate={{ x: -40 }}  transition={{delay:1}} className='overflow-x-hidden'>
   <form className="card-body">
         <div className="form-control">
           <label className="label">
@@ -51,7 +51,7 @@ const Contact = () => {
            
           </div>
 
-          <motion.div animate={{ x: -20 ,scale:1}} initial={{scale:0}} transition={{delay:1}} className="flex-1">
+          <motion.div animate={{ x: -20 ,scale:1}} initial={{scale:0}} transition={{delay:1}} className="flex-1 overflow-x-hidden">
             <img src={about} alt="" className="w-[600px]" />
           </motion.div>
         </div>

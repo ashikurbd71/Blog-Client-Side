@@ -7,13 +7,13 @@ import bg from '../../public/blcard-bg.png'
 const Blogsection = () => {
   const { data, isLoading } = Query();
 
-  if (isLoading) {
-    return (
-      <div className="min-h-screen mx-auto mt-36 w-[500px] ">
-        <Lottie animationData={loading}></Lottie>
-      </div>
-    );
-  }
+  // if (isLoading) {
+  //   return (
+  //     <div className="min-h-screen mx-auto mt-36 w-[500px] ">
+  //       <Lottie animationData={loading}></Lottie>
+  //     </div>
+  //   );
+  // }
 
   console.log(data);
 

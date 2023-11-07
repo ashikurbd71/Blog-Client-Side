@@ -3,6 +3,8 @@ import React from 'react';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion"
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 const Blogcard = ({blog}) => {
 
     const title = blog?.title
@@ -29,12 +31,12 @@ const Blogcard = ({blog}) => {
    }
      
     return (
-        <motion.div animate={{ x: -20 ,scale:1}} initial={{scale:0}} transition={{delay:1}} className=' '>
+        <motion.div animate={{ x: 10 ,scale:1}} initial={{scale:0}} transition={{delay:1}} className=' overflow-x-hidden '>
             <div className="card w-full h-[500px]  bg-base-100 shadow-xl">
   <figure><img src= {blog?.image} alt="Shoes" className='w-full h-[250px]' /></figure>
   <div className="card-body">
     <h2 className="card-title">
-     {blog?.title}
+     {blog?.title || <Skeleton count={10}/>}
       <div className="badge text-xl font-samibold p-3 badge-secondary">{blog?.category}</div>
     </h2>
     <p>{blog?.short_description}</p>
