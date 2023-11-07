@@ -15,6 +15,17 @@ const Wishlist = () => {
         }
      })
 
+     const {datas} = useQuery({
+
+        queryKey: ["newsid"],
+        queryFn: async () => {
+    
+            const datas = await fetch('http://localhost:5000/allblogs')
+            return await datas.json()
+        }
+     })
+     
+
      if(isLoading){
 
         <div className="min-h-screen mx-auto mt-36 w-[500px] ">
@@ -40,10 +51,16 @@ const Wishlist = () => {
         </p>
          </div>
       </div>
+
+      {
+            datas?.map(datas => <Wishlistcard datas={datas} key={datas._id}></Wishlistcard>)
+          }
          <div className='max-w-[1200px] gap-6 mx-auto py-8 px-5 lg:px-0 grid grid-cols-1'>
           {
              data?.map(wishcard => <Wishlistcard refetch={refetch} wishcard={wishcard} key={wishcard._id}></Wishlistcard>)
           }
+
+         
         </div>
          </div>
         </>

@@ -1,10 +1,15 @@
+import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
-const Wishlistcard = ({wishcard,refetch}) => {
+const Wishlistcard = ({wishcard,refetch,}) => {
     console.log(wishcard)
 
+    
+
+ 
     const hanledelete = (_id) => {
 
 
@@ -41,8 +46,12 @@ const Wishlistcard = ({wishcard,refetch}) => {
     })
 
 }
+
+
     return (
         <div>
+
+           
             <div className="card flex lg:flex-row flex-col justify-between bg-base-100  shadow-xl">
   <div className='flex-1'>
   <figure><img src= {wishcard?.image} className='w-full h-full' alt="Album"/></figure>
@@ -53,7 +62,7 @@ const Wishlistcard = ({wishcard,refetch}) => {
     <div className="badge text-xl font-samibold p-3 badge-secondary">{wishcard?.category}</div>
     <p>{wishcard?.short_description}</p>
     <div className="card-actions justify-end">
-   <Link to={`/wishdetails/${wishcard?._id}`}> <button className="btn btn-outline btn-secondary">Details</button> </Link>
+   <Link to={`/details/${wishcard?._id}`}> <button className="btn btn-outline btn-secondary">Details</button> </Link>
       <button onClick={() => hanledelete(wishcard?._id)} className="btn btn-outline btn-secondary">Remove</button>
     </div>
   </div>
