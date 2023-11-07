@@ -6,7 +6,7 @@ const Featuredblog = () => {
 
     const {data,isLoading,isFetching,refetch} = useQuery({
 
-        queryKey: ["blog"],
+        queryKey: ["table"],
         queryFn: async () => {
     
             const data = await fetch('http://localhost:5000/allblogs')
@@ -50,7 +50,7 @@ const Featuredblog = () => {
         },
         {
           name : 'Blog Owner',
-          selector:row => row.users,
+          selector:row => row.owner,
           sortable:true
         },
         {

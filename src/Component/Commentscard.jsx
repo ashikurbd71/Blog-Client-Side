@@ -4,9 +4,9 @@ const Commentscard = ({data}) => {
     return (
         <div>
                <div className='max-w-[1200px] mx-auto'>
-          <div className='  rounded-lg  '>
+          <div className='rounded-lg  '>
           
-          <div className='flex gap-3 items-center'>
+          <div className='flex  gap-3 items-center'>
           <div className="avatar">
   <div className="w-10 rounded-full">
     <img src={data?.userimg} />
@@ -21,7 +21,7 @@ const Commentscard = ({data}) => {
  
           </div>
  
-<p className='text-xl py-2 font-semibold'>{data?.comment}</p>
+<p className='text-xl ml-12 py-2 font-semibold'>{data?.comment}</p>
           </div>
 
            

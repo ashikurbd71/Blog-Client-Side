@@ -13,11 +13,13 @@ const Addblog = () => {
         const category = e.target.category.value.toLowerCase()
         const short_description = e.target.short_description.value
         const long_description = e.target.long_description.value
-        const user = e.target.user.value
+        const users = e.target.users.value
+        const userimg = user?.photoURL
+        const owner = user?.displayName
     
         
         const productinfo = {
-            title,image,category,short_description,long_description,user
+            title,image,category,short_description,long_description,users,userimg,owner
         }
         console.log(productinfo)
     
@@ -69,7 +71,7 @@ const Addblog = () => {
   </label>
   <label className="input-group">
 
-    <input type="text" defaultValue={user?.email} placeholder="Enter Title" name="user" className="input input-bordered w-full" />
+    <input type="text" defaultValue={user?.email} placeholder="Enter Title" name="users" className="input input-bordered w-full" />
   </label>
 </div>
 <div className="form-control lg:w-1/2 lg:ml-4">
