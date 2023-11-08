@@ -19,7 +19,7 @@ const Allblogscard = ({blog}) => {
 
     const  handlelist = () => {
 
-        axios.post('http://localhost:5000/addlist',addData)
+        axios.post('https://blogsph-server.vercel.app/addlist',addData)
         .then(res =>  {console.log(res.data)
        
            if(res.data.insertedId){
@@ -32,7 +32,7 @@ const Allblogscard = ({blog}) => {
     return (
         <div >
             <div className="card h-[500px] bg-base-100 shadow-xl">
-  <figure><img src={blog?.image} alt="Shoes" /></figure>
+  <figure><img src={blog?.image} className='w-full ' alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title">
     {blog?.title}

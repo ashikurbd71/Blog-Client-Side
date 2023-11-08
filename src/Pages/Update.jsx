@@ -20,7 +20,7 @@ const Update = () => {
         }
         console.log(productinfo)
     
-        axios.put(`http://localhost:5000/allblogs/${data?._id}`,productinfo)
+        axios.put(`https://blogsph-server.vercel.app/allblogs/${data?._id}`,productinfo)
         .then(res => {console.log(res.data)
             if(res.data.modifiedCount){
               

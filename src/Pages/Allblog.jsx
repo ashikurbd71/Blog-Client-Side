@@ -6,6 +6,7 @@ import bg1 from '../../public/blcard-bg.png'
 import Swal from 'sweetalert2';
 import load from '../assets/loading.json'
 import Lottie from 'lottie-react';
+import Loading from '../Component/loading';
 
 const Allblog = () => {
 
@@ -24,7 +25,7 @@ const Allblog = () => {
     console.log(blogpost)
     useEffect(() => {
 
-         fetch('http://localhost:5000/allblogs',{credentials:'include'})
+         fetch('https://blogsph-server.vercel.app/allblogs',{credentials:'include'})
          .then(res => res.json())
          .then(data => setBlogpost(data))
 
@@ -45,7 +46,7 @@ const Allblog = () => {
         return (
     
     
-        Swal.fire('Search Again!'))
+        Swal.fire('Blogs Not foud'))
         
        }
     
@@ -63,7 +64,7 @@ const Allblog = () => {
     return (
 
 
-    Swal.fire('Search Again!'))
+    Swal.fire('Blogs Not foud!'))
     
    }
 
@@ -77,14 +78,14 @@ const Allblog = () => {
     return (
 
         <>
-        <div className='h-[600px] bg-fixed'  style={{
+        <div className='h-[600px] bg-fixed '  style={{
             backgroundImage: `url(${bg})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}>
          
        
-       <div className='pt-28'>
+       <div className='lg:pt-28 pt-8'>
 
        <div className='flex justify-center'>
        <p className='lg:text-2xl text-xl text-center font-samibold w-[60%] text-white'>Welcome to our one-stop shop, where versatility meets variety! Explore
@@ -98,7 +99,7 @@ const Allblog = () => {
 
        <div className='max-w-[1200px]   py-6'>
 
-    <div className='flex justify-center mb-5'>
+    <div className='flex justify-center mb-10'>
     
     <div>
 <select name="category" placeholder='serch by category' onChange={(e) => setSearchQuery(e.target.value)}  value={searchQuery} className='input input-bordered rounded-none' id="">
@@ -117,20 +118,20 @@ const Allblog = () => {
     </select>
 
        
-        <button onClick={handlechngs}  className="btn btn-primary absolute bg-[#E2136E] border-none rounded-l-none">Search</button>
+        <button onClick={handlechngs}  className="btn rounded-r-none btn-primary absolute bg-[#E2136E] border-none rounded-l-none">Filter</button>
         </div>
    
     </div>
 
     
-    <div className='flex justify-center'>
+    <div className='flex justify-center  lg:mb-0 px-5 lg:px-0'>
         <div>
         <input type="text" value={searchtitle}
      onChange={(e) => setSearchtitle(e.target.value)}
      placeholder="Search by title"
    
-     className="input input-bordered rounded-none lg:w-[400px] pr-16" /> 
-  <button onClick={handletitle}  className="btn btn-primary absolute bg-[#E2136E] border-none rounded-l-none">Search</button>
+     className="input input-bordered rounded-none lg:w-[400px] lg:pr-16" /> 
+  <button onClick={handletitle}  className="btn btn-primary rounded-r-none  absolute bg-[#E2136E] border-none rounded-l-none">Search</button>
         </div>
         </div>
  </div>
@@ -140,7 +141,7 @@ const Allblog = () => {
 
         </div>
 
-         <div style={{
+         <div className='  ' style={{
             backgroundImage: `url(${bg1})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
@@ -150,9 +151,11 @@ const Allblog = () => {
         {
            blogpost?.length > 0 ?  blogpost?.map(blog => <Allblogscard  blog={blog} key={blog?._id}></Allblogscard>) :
 
-          <div className='flex jus justify-center min-h-screen'>
-     <Lottie animationData={load}></Lottie>
-          </div>
+
+           <Loading/>
+    //       <div className='flex jus justify-center min-h-screen'>
+    //  <Lottie animationData={load}></Lottie>
+    //       </div>
         }
         </div>
         </div>

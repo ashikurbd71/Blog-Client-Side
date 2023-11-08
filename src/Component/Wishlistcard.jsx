@@ -5,7 +5,12 @@ import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const Wishlistcard = ({wishcard,refetch,}) => {
+
+ 
     console.log(wishcard)
+
+   
+
 
     
 
@@ -25,7 +30,7 @@ const Wishlistcard = ({wishcard,refetch,}) => {
           }).then((result) => {
             if (result.isConfirmed) {
 
-                axios.delete(`http://localhost:5000/addlist/${_id}`)
+                axios.delete(`https://blogsph-server.vercel.app/addlist/${_id}`)
                 .then(res => {console.log(res.data)
                 
                 if(res.data.deletedCount > 0){
@@ -62,7 +67,7 @@ const Wishlistcard = ({wishcard,refetch,}) => {
     <div className="badge text-xl font-samibold p-3 badge-secondary">{wishcard?.category}</div>
     <p>{wishcard?.short_description}</p>
     <div className="card-actions justify-end">
-   <Link to={`/details/${wishcard?._id}`}> <button className="btn btn-outline btn-secondary">Details</button> </Link>
+   <Link to={`/details/${wishcard?.blog_id}`}> <button className="btn btn-outline btn-secondary">Details</button> </Link>
       <button onClick={() => hanledelete(wishcard?._id)} className="btn btn-outline btn-secondary">Remove</button>
     </div>
   </div>

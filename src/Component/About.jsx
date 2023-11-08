@@ -32,7 +32,7 @@ const About = () => {
           <img src={about} alt="" className="w-[600px]" />
         </motion.div>
 
-        <motion.div animate={{ x: -40 }}  transition={{delay:1}} className="flex-1  overflow-x-hidden ">
+        <motion.div animate={{ opacity: 1, transition: { duration: 2, delay: 1 } }} className="flex-1  overflow-x-hidden ">
           <h1 className="lg:text-3xl text-xl font-bold ">
             Simple and straightforward indicating <br /> an introduction to your
             identit

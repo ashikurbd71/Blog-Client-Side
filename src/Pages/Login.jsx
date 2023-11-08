@@ -53,7 +53,7 @@ const Login = () => {
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}>
-          <div className="px-5 pt-10 lg:px-0 mx-20 lg:flex-row flex-col-reverse items-center min-h min-h-screen flex justify-center ">
+          <div className="px-5 pt-10 lg:px-0 lg:mx-20 lg:flex-row flex-col-reverse items-center min-h min-h-screen flex justify-center ">
        
 
        <div>

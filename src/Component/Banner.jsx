@@ -13,7 +13,7 @@ const Banner = () => {
         backgroundPosition: "center",
       }}
     >
-      < motion.div animate={{ x: 20 }}  transition={{delay:1}} className="py-20 w-full max-w-[1200px] lg:px-0 px-10 justify-center flex lg:flex-row flex-col items-center  mx-auto">
+      < motion.div animate={{ opacity: 1, transition: { duration: 2, delay: 1 } }} className="py-20 w-full max-w-[1200px] lg:px-0 px-10 justify-center flex lg:flex-row flex-col items-center  mx-auto">
         <motion.div className="sp space-y-4">
           <h1 className="lg:text-6xl text-4xl font-bold text-[#FFFFFF]">Create a Blog.</h1>
           <p className="text-[#F5F5F5] pb-5 font-bold text-lg">

@@ -7,7 +7,7 @@ const Query = () => {
         queryKey: ["newsall"],
         queryFn: async () => {
     
-            const data = await fetch('http://localhost:5000/blogs')
+            const data = await fetch('https://blogsph-server.vercel.app/blogs')
             return await data.json()
         }
      })

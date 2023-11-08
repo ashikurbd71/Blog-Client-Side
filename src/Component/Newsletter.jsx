@@ -43,7 +43,8 @@ toast.success('Thank you for subscribing to our newsletter')
 
 
        <motion.div animate={{ x: -20 ,scale:1}} initial={{scale:0}} transition={{delay:1}}>
-  <Lottie animationData={news} loop={false} autoplay={false} className="flex-1"></Lottie>
+  <Lottie animationData={news}  className="flex-1"></Lottie>
+  
        </motion.div>
 
  <motion.div animate={{ x: -40 }}  transition={{delay:1}}>

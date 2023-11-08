@@ -17,11 +17,11 @@ const Details = () => {
     const comment = e.target.comment.value
     const username = user?.displayName
     const userimg = user?.photoURL
-   
-    const commentss = {comment,username,userimg}
+   const blog_id = details?._id
+    const commentss = {comment,username,userimg,blog_id}
     console.log(commentss)
 
-    axios.post('http://localhost:5000/comments',commentss)
+    axios.post('https://blogsph-server.vercel.app/comments',commentss)
     .then(res => {console.log(res.data)
     if(res.data.insertedId){
 
@@ -35,7 +35,7 @@ const Details = () => {
     queryKey: ["commnet"],
     queryFn: async () => {
 
-        const data = await fetch('http://localhost:5000/comments')
+        const data = await fetch('https://blogsph-server.vercel.app/comments')
         return await data.json()
     }
  })

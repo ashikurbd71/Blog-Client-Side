@@ -3,6 +3,7 @@ import Query from "../Hooks/Query";
 import loading from "../assets/loading.json";
 import Blogcard from "./Blogcard";
 import bg from '../../public/blcard-bg.png'
+import Loading from "./loading";
 
 const Blogsection = () => {
   const { data, isLoading } = Query();
@@ -14,6 +15,11 @@ const Blogsection = () => {
   //     </div>
   //   );
   // }
+
+  if(isLoading){
+
+    return <Loading/>
+  }
 
   console.log(data);
 

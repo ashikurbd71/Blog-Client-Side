@@ -47,11 +47,11 @@ useEffect(() => {
         setUser(currentuser)
 
          if(currentuser){
-                axios.post('http://localhost:5000/jwt',loguser,{withCredentials:true})
+                axios.post('https://blogsph-server.vercel.app/jwt',loguser,{withCredentials:true})
                 .then(res => console.log(res.data))
             }else{
 
-                axios.post('http://localhost:5000/logout',loguser,{withCredentials:true})
+                axios.post('https://blogsph-server.vercel.app/logout',loguser,{withCredentials:true})
                 .then(res => console.log(res.data))
             }
 

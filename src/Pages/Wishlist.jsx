@@ -5,28 +5,33 @@ import Lottie from 'lottie-react';
 import loading from "../assets/loading.json";
 import bg from '../../public/blcard-bg.png'
 import not from '../assets/not-found.json'
+import Useauth from '../Hooks/Useauth';
 const Wishlist = () => {
+  const {user} = Useauth()
     const {data,isLoading,isFetching,refetch} = useQuery({
+
+
 
         queryKey: ["news"],
         queryFn: async () => {
     
-            const data = await fetch('http://localhost:5000/addlist',{credentials:'include'})
+            const data = await fetch('https://blogsph-server.vercel.app/addlist',{credentials:'include'})
             return await data.json()
         }
      })
 
-     const {datas} = useQuery({
+    //  const {datas} = useQuery({
 
-        queryKey: ["newsid"],
-        queryFn: async () => {
+    //     queryKey: ["newsid"],
+    //     queryFn: async () => {
     
-            const datas = await fetch('http://localhost:5000/allblogs')
-            return await datas.json()
-        }
-     })
+    //         const datas = await fetch('http://localhost:5000/allblogs')
+    //         return await datas.json()
+    //     }
+    //  })
      
 
+    const carddata = data?.filter((datas) => datas?.users == user?.email)
      if(isLoading){
 
         <div className="min-h-screen mx-auto mt-36 w-[500px] ">
@@ -34,7 +39,6 @@ const Wishlist = () => {
       </div>
      }
 
-     
     return (
         <>
          <div className='bg-fixed h-full'style={{
@@ -53,12 +57,12 @@ const Wishlist = () => {
          </div>
       </div>
 
-      {
-            datas?.map(datas => <Wishlistcard datas={datas} key={datas._id}></Wishlistcard>)
-          }
+    
          <div className='max-w-[1200px] gap-6 mx-auto py-8 px-5 lg:px-0 grid grid-cols-1'>
           {
-          data?.length > 0 ? data?.map(wishcard => <Wishlistcard refetch={refetch} wishcard={wishcard} key={wishcard._id}></Wishlistcard>) :
+
+
+carddata?.length > 0 ? carddata?.map(wishcard => <Wishlistcard refetch={refetch} wishcard={wishcard} key={wishcard._id}></Wishlistcard>) :
 
           <div>
             <Lottie animationData={not}></Lottie>
