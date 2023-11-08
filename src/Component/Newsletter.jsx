@@ -47,7 +47,7 @@ toast.success('Thank you for subscribing to our newsletter')
   
        </motion.div>
 
- <motion.div animate={{ x: -40 }}  transition={{delay:1}}>
+ <motion.div animate={{ opacity: 1, transition: { duration: 2, delay: 1 } }}>
  <form onSubmit={handlefrom} className="flex-1 mb-10">
         <div className="form-control w-[400px]">
 

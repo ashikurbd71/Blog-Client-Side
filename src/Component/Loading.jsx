@@ -3,7 +3,7 @@ import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 const Loading = () => {
     return (
-        <div className='grid grid-cols-1 lg:grid-cols-3 max-w-[1200px] mx-auto'>
+        <div className='grid grid-cols-1 lg:grid-cols-3 gap-10'>
             <div className="card  w-full h-[400px] bg-base-100 shadow-xl">
     <div className='w-[400px] h-[400px]'><Skeleton /></div>
   <div className="card-body">
@@ -101,6 +101,8 @@ const Loading = () => {
 
 
 </div>
+
+
 <div className="card w-full h-[400px]  bg-base-100 shadow-xl">
     <div className='w-[400px] h-[400px]'><Skeleton /></div>
   <div className="card-body">

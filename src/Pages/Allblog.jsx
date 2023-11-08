@@ -4,8 +4,7 @@ import Allblogscard from '../Component/Allblogscard';
 import {  useEffect, useState } from 'react';
 import bg1 from '../../public/blcard-bg.png'
 import Swal from 'sweetalert2';
-import load from '../assets/loading.json'
-import Lottie from 'lottie-react';
+
 import Loading from '../Component/loading';
 
 const Allblog = () => {
@@ -41,7 +40,7 @@ const Allblog = () => {
         post.title.toLowerCase().includes(searchtitle.toLowerCase())
       );
     
-      if(searchResults.length === 0){
+      if(searchResults?.length === 0){
     
         return (
     
@@ -59,7 +58,7 @@ const Allblog = () => {
     post.category.toLowerCase() == searchQuery.toLowerCase()
   );
 
-  if(searchResults.length === 0){
+  if(searchResults?.length === 0){
 
     return (
 
@@ -130,7 +129,7 @@ const Allblog = () => {
      onChange={(e) => setSearchtitle(e.target.value)}
      placeholder="Search by title"
    
-     className="input input-bordered rounded-none lg:w-[400px] lg:pr-16" /> 
+     className="input input-bordered rounded-none lg:w-[400px] lg:pr-16 p-5" /> 
   <button onClick={handletitle}  className="btn btn-primary rounded-r-none  absolute bg-[#E2136E] border-none rounded-l-none">Search</button>
         </div>
         </div>
