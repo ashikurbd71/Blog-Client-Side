@@ -45,6 +45,7 @@ useEffect(() => {
         const loguser ={ 'email': userEmail}
         setLoading(false)
         setUser(currentuser)
+        console.log(currentuser)
 
          if(currentuser){
                 axios.post('https://blogsph-server.vercel.app/jwt',loguser,{withCredentials:true})

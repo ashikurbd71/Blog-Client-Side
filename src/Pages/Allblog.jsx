@@ -10,16 +10,7 @@ import Loading from '../Component/loading';
 const Allblog = () => {
 
 
-    
-    // const {data,isLoading,isFetching,refetch} = useQuery({
-
-    //     queryKey: ["news"],
-    //     queryFn: async () => {
-    
-    //         const data = await fetch('http://localhost:5000/allblogs')
-    //         return await data.json()
-    //     }
-    //  })
+  
     const [blogpost,setBlogpost]=useState()
     console.log(blogpost)
     useEffect(() => {
@@ -146,18 +137,23 @@ const Allblog = () => {
             backgroundPosition: "center",
           }}>
 
+            {
+              blogpost?.length > 0 ?
+         
+
         <div className='grid lg:grid-cols-3 grid-cols-1 px-5 lg:px-0 gap-5 max-w-[1200px] mx-auto py-10'>
         {
-           blogpost?.length > 0 ?  blogpost?.map(blog => <Allblogscard  blog={blog} key={blog?._id}></Allblogscard>) :
+            blogpost?.map(blog => <Allblogscard  blog={blog} key={blog?._id}></Allblogscard>) 
 
-
-           <Loading/>
-    //       <div className='flex jus justify-center min-h-screen'>
-    //  <Lottie animationData={load}></Lottie>
-    //       </div>
-        }
+          }
+   
+      
         </div>
-        </div>
+       
+       : <Loading/>
+       
+      }
+       </div>
         </>
        
     );

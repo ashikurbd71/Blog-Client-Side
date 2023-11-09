@@ -2,10 +2,12 @@ import axios from 'axios';
 import React from 'react';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+import Useauth from '../Hooks/Useauth';
 
 
 const Allblogscard = ({blog}) => {
 
+  const {user} =Useauth()
     console.log(blog)
 
     const title = blog?.title
@@ -13,9 +15,12 @@ const Allblogscard = ({blog}) => {
     const short_description = blog?.short_description
     const long_description = blog?.long_description
     const category = blog?.category
+    const users = user?.email
+    const blog_id = blog?._id
 
 
-    const addData = {title,image,short_description,long_description,category}
+
+    const addData = {title,image,short_description,long_description,category,users,blog_id}
 
     const  handlelist = () => {
 

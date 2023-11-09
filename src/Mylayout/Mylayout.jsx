@@ -86,7 +86,7 @@ const Mylayout = ({children}) => {
     isPending ? "pending" : isActive ? "bg-white text-black" : " "
   }
 >
-  FEATURE
+  FEATURED
 </NavLink>
 
 
@@ -200,7 +200,7 @@ user ?  <div className="dropdown dropdown-end mr-3">
     isPending ? "pending" : isActive ? "bg-white text-black" : " "
   }
 >
-  FEATURE
+  FEATURED
 </NavLink>
 
 

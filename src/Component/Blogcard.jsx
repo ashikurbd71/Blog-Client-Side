@@ -41,7 +41,9 @@ const Blogcard = ({blog}) => {
    }
      
     return (
-        <motion.div animate={{ x: 10 ,scale:1}} initial={{scale:0}} transition={{delay:1}} className=' overflow-x-hidden '>
+
+      <motion.div animate={{ x: 10 ,scale:1}} initial={{scale:0}} transition={{delay:1}}>
+        <div  className=' overflow-x-hidden '>
             <div className="card w-full h-[500px]  bg-base-100 shadow-xl">
   <figure><img src= {blog?.image} alt="Shoes" className='w-full h-[250px]' /></figure>
   <div className="card-body">
@@ -56,6 +58,8 @@ const Blogcard = ({blog}) => {
     </div>
   </div>
 </div>
+        </div>
+
         </motion.div>
     );
 };

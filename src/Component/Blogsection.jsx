@@ -16,10 +16,10 @@ const Blogsection = () => {
   //   );
   // }
 
-  if(isLoading){
+  // if(isLoading){
 
-    return <Loading/>
-  }
+  //   return
+  // }
 
   console.log(data);
 
@@ -40,11 +40,22 @@ const Blogsection = () => {
         </p>
          </div>
       </div>
-      <div className="grid lg:grid-cols-3 my-10 grid-cols-1 px-5 gap-10 max-w-[1200px] mx-auto lg:px-0">
-        {data?.map((blog) => (
-          <Blogcard blog={blog} key={blog?.title}></Blogcard>
-        ))}
-      </div>
+      {
+              data?.length > 0 ?
+         
+
+        <div className='grid lg:grid-cols-3 grid-cols-1 px-5 lg:px-0 gap-5 max-w-[1200px] mx-auto py-10'>
+        {
+            data?.map(blog => <Blogcard  blog={blog} key={blog?._id}></Blogcard>) 
+
+          }
+   
+      
+        </div>
+       
+       : <Loading/>
+       
+      }
       </div>
     </>
   );
