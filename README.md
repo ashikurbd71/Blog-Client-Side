@@ -11,7 +11,7 @@
 .User can see his added blocks in wish list route.  And he can delete from the wish list if he wants.  The user must login and then enter.  Because without the token, the user will not be able to see his data
 
 # Use Technologics
-.Tailwind CSS  .Javascript  .React Js  .Node Js  .Express js  .MongoDB  .Firebase 
+.Tailwind CSS  .Javascript  .React Js  .Node Js  .Express js  .MongoDB  .Firebase .Jwt
 
 # Web Tools
 .Git  .Github  .Surge  .vercel 
