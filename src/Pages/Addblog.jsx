@@ -42,7 +42,7 @@ const Addblog = () => {
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}>
-         <div className="bg-[#007CFD]  dark:bg-black min-h-screen   lg:mx-20">
+         <div data-aos="zoom-out" className="bg-[#007CFD]  dark:bg-black min-h-screen   lg:mx-20">
         <div className="text-center ">
           <h1 className="text-[#fff] text-[30px] font-bold">Add New Blog</h1>
           <p className="lg:px-28 px-5 py-4 font-medium text-[#fff]">

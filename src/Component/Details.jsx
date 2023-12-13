@@ -58,7 +58,7 @@ const Details = () => {
       }}>
 
      
-        <div className="max-w-[1200px]  mx-auto  card px-5 lg:px-0 lg:card-side bg-base-100 shadow-xl">
+        <div data-aos="zoom-out" className="max-w-[1200px]  mx-auto  card px-5 lg:px-0 lg:card-side bg-base-100 shadow-xl">
        
 
        <div className='flex lg:flex-row flex-col justify-between'>

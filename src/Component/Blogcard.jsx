@@ -42,7 +42,8 @@ const Blogcard = ({blog}) => {
      
     return (
 
-      <motion.div animate={{ x: 10 ,scale:1}} initial={{scale:0}} transition={{delay:1}}>
+      <div data-aos="fade-up"
+      data-aos-anchor-placement="top-bottom">
         <div  className=' overflow-x-hidden '>
             <div className="card w-full h-[500px]  bg-base-100 shadow-xl">
   <figure><img src= {blog?.image} alt="Shoes" className='w-full h-[250px]' /></figure>
@@ -60,7 +61,7 @@ const Blogcard = ({blog}) => {
 </div>
         </div>
 
-        </motion.div>
+        </div>
     );
 };
 

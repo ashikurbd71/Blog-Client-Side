@@ -25,8 +25,8 @@ toast.success('Thank you for subscribing to our newsletter')
         backgroundPosition: "center",
       }}
     >
-      <div className="max-w-[1200px] mx-auto px-5 lg:px-0">
-        <div className="text-center  py-10 ">
+      <div className="max-w-[1200px] mx-auto px-5 lg:px-0" >
+        <div className="text-center  py-10 " data-aos="zoom-out-right">
           <h1 className="font-bold lg:text-4xl text-2xl">N E W S L E T T E R</h1>
           <div className="flex justify-center">
           <p className="my-3 text-xl  w-[70%]">
@@ -42,12 +42,17 @@ toast.success('Thank you for subscribing to our newsletter')
           <div className="flex jus lg:flex-row flex-col justify-between gap-10 items-center">
 
 
-       <motion.div animate={{ x: -20 ,scale:1}} initial={{scale:0}} transition={{delay:1}}>
+       < div data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
   <Lottie animationData={news}  className="flex-1"></Lottie>
   
-       </motion.div>
+       </div>
 
- <motion.div animate={{ opacity: 1, transition: { duration: 2, delay: 1 } }}>
+ <div data-aos="fade-left"
+     data-aos-anchor="#example-anchor"
+     data-aos-offset="500"
+     data-aos-duration="500">
  <form onSubmit={handlefrom} className="flex-1 mb-10">
         <div className="form-control w-[400px]">
 
@@ -62,7 +67,7 @@ toast.success('Thank you for subscribing to our newsletter')
         <button className="btn btn-outline text-2xl fon-bold btn-secondary"><input type="button" value="Subcribe" /></button>
         </div>
       </form>
- </motion.div>
+ </div>
 
           </div>
       </div>

@@ -43,7 +43,7 @@ const Featuredblog = () => {
      console.log(data)
 
      if(isLoading){
-      return <div className=''>
+      return <div data-aos="zoom-out" className=''>
 
       <Lottie animationData={loading}></Lottie>
       </div>

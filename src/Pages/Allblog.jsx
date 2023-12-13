@@ -77,7 +77,9 @@ const Allblog = () => {
        
        <div className='lg:pt-28 pt-8'>
 
-       <div className='flex justify-center'>
+       <div  data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine" className='flex justify-center'>
        <p className='lg:text-2xl text-xl text-center font-samibold w-[60%] text-white'>Welcome to our one-stop shop, where versatility meets variety! Explore
           a world of endless choices at SQUARESPACE. Discover the perfect blend of quality,
           style, and affordability as you navigate through our diverse product
@@ -141,7 +143,8 @@ const Allblog = () => {
               blogpost?.length > 0 ?
          
 
-        <div className='grid lg:grid-cols-3 grid-cols-1 px-5 lg:px-0 gap-5 max-w-[1200px] mx-auto py-10'>
+        <div  data-aos="fade-up"
+        data-aos-duration="3000" className='grid lg:grid-cols-3 grid-cols-1 px-5 lg:px-0 gap-5 max-w-[1200px] mx-auto py-10'>
         {
             blogpost?.map(blog => <Allblogscard  blog={blog} key={blog?._id}></Allblogscard>) 
 

@@ -29,12 +29,14 @@ const Contact = () => {
         >
         
   
-          <div className="flex-1">
-            <h1 className="lg:text-3xl mt-10 text-center text-xl font-bold ">
+          <div  className="flex-1">
+            <h1 data-aos="zoom-out-right" className="lg:text-3xl mt-10 text-center text-xl font-bold ">
             Warm and welcoming, encouraging a friendly greeting
             </h1>
   
-  <motion.div animate={{ opacity: 1, transition: { duration: 2, delay: 1 } }} className='overflow-x-hidden'>
+  <div data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine" className='overflow-x-hidden'>
   <form className="card-body">
         <div className="form-control">
           <label className="label">
@@ -47,13 +49,16 @@ const Contact = () => {
         <button className="btn btn-outline btn-secondary">Send</button>
         </div>
       </form>
-  </motion.div>
+  </div>
            
           </div>
 
-          <motion.div animate={{ x: -20 ,scale:1}} initial={{scale:0}} transition={{delay:1}} className="flex-1 overflow-x-hidden">
+          <div data-aos="fade-left"
+     data-aos-anchor="#example-anchor"
+     data-aos-offset="500"
+     data-aos-duration="500" className="flex-1 overflow-x-hidden">
             <img src={about} alt="" className="w-[600px]" />
-          </motion.div>
+          </div>
         </div>
       </>
     );

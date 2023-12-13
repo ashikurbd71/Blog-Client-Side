@@ -28,11 +28,16 @@ const About = () => {
           backgroundPosition: "center",
         }}
       >
-        <motion.div  animate={{ x: -20 ,scale:1}} initial={{scale:0}} transition={{delay:1}} className="flex-1 overflow-x-hidden">
+        <div  data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine" className="flex-1 overflow-x-hidden">
           <img src={about} alt="" className="w-[600px]" />
-        </motion.div>
+        </div>
 
-        <motion.div animate={{ opacity: 1, transition: { duration: 2, delay: 1 } }} className="flex-1  overflow-x-hidden ">
+        <div  data-aos="fade-left"
+     data-aos-anchor="#example-anchor"
+     data-aos-offset="500"
+     data-aos-duration="500" className="flex-1  overflow-x-hidden ">
           <h1 className="lg:text-3xl text-xl font-bold ">
             Simple and straightforward indicating <br /> an introduction to your
             identit
@@ -46,7 +51,7 @@ const About = () => {
             the blog. Highlight your motivations, experiences, or expertise in
             the niche you're covering.
           </p>
-        </motion.div>
+        </div>
       </div>
     </>
   );
