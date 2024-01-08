@@ -52,13 +52,13 @@ const Details = () => {
         <>
 
         <div className='h-full pt-20 pb-10 px-5' style={{
-        backgroundImage: `url(${bg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
+        // backgroundImage: `url(${bg})`,
+        // backgroundSize: "cover",
+        // backgroundPosition: "center",
       }}>
 
      
-        <div data-aos="zoom-out" className="max-w-[1200px]  mx-auto  card px-5 lg:px-0 lg:card-side bg-base-100 shadow-xl">
+        <div data-aos="zoom-out" className=" card px-5 lg:px-0 lg:card-side  ">
        
 
        <div className='flex lg:flex-row flex-col justify-between'>
@@ -73,11 +73,11 @@ const Details = () => {
 
          <div className="card-body ">
           <h2 className="card-title">{details?.title}</h2>
-          <div className="badge text-xl font-samibold p-3 badge-secondary">{details?.category}</div>
+          <div className="badge text-xl font-samibold p-3 bg-[#17ADF8]">{details?.category}</div>
           <h2 className='text-lg font-semibold'>{details?.short_description}</h2>
           <p>{details?.long_description}</p>
 
-          <div className="rating mt-5">
+          <div className="rating mt-5 ">
   <input type="radio" name="rating-1" className="mask mask-star" />
   <input type="radio" name="rating-1" className="mask mask-star" checked />
   <input type="radio" name="rating-1" className="mask mask-star" />
@@ -88,9 +88,9 @@ const Details = () => {
 
          
          {
-          user?.email == details.users ?  <Link to={`/update/${details?._id}`}><button className="btn btn-outline btn-secondary">Update</button></Link>: ''
+          user?.email == details.users ?  <Link to={`/update/${details?._id}`}><button className="btn btn-[12px] btn-outline btn-info ">Update</button></Link>: ''
          }
-          <Link to={'/'}><button className="btn btn-outline btn-secondary">Back</button></Link>
+          <Link to={'/'}><button className="btn btn-[12px] btn-outline btn-info ">Back</button></Link>
           </div>
         </div>
          </div>
@@ -108,7 +108,7 @@ const Details = () => {
           <form onSubmit={handlecomment} className='flex flex-col'>
           <textarea className="textarea textarea-info w-[400px]" name='comment' placeholder="type here"></textarea>
          
-          <button type="submit" className="btn btn-outline btn-secondary mt-5 w-[400px]"> Comment </button>
+          <button type="submit" className="btn btn-[12px] btn-outline btn-info mt-3 w-[400px]"> Comment </button>
           </form>
         </div>  
          }

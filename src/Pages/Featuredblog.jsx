@@ -83,7 +83,7 @@ const Featuredblog = () => {
         <>
 
            <div className='mb-5'>
-            <h1 className='text-3xl font-bold text-center my-5'>T O P B L O G S</h1>
+            <h1 className='text-3xl font-bold text-center my-5 text-[#007CFD]'>T O P B L O G S</h1>
             <hr />
            </div>
         <div className=' lg:w-[1000px] my-20 mx-auto'>

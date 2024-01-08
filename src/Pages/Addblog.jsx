@@ -38,9 +38,9 @@ const Addblog = () => {
     
     return (
         <div className='py-10' style={{
-            backgroundImage: `url(${bg})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
+            // backgroundImage: `url(${bg})`,
+            // backgroundSize: "cover",
+            // backgroundPosition: "center",
           }}>
          <div data-aos="zoom-out" className="bg-[#007CFD]  dark:bg-black min-h-screen   lg:mx-20">
         <div className="text-center ">

@@ -26,14 +26,12 @@ const Blogsection = () => {
   return (
     <>
       <div className="py-10  bg-fixed" style={{
-        backgroundImage: `url(${bg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundColor:'#EBECEE'
       }}>
       <div className="text-center space-y-3 " data-aos="zoom-out-right">
-        <h1 className="lg:text-4xl text-3xl  font-bold">R E C E N T   B L O G S</h1>
+        <h1 className="lg:text-4xl text-3xl text-[#17ADF8] font-bold">R E C E N T   B L O G S</h1>
          <div className="flex justify-center">
-         <p className="text-xl w-[70%] ">
+         <p className="lg:text-xl lg:w-[70%] text-black">
           Ensure that the short description accurately represents the content of
           the blog post. Misleading descriptions can lead to user
           dissatisfaction

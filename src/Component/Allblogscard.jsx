@@ -37,16 +37,16 @@ const Allblogscard = ({blog}) => {
     return (
         <div >
             <div className="card h-[500px] bg-base-100 shadow-xl">
-  <figure><img src={blog?.image} className='w-full ' alt="Shoes" /></figure>
+  <figure><img src={blog?.image} className='w-full h-[200px] ' alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title">
     {blog?.title}
-      <div className="badge badge-secondary">{blog?.category}</div>
+      <div className="badge bg-[#17ADF8]">{blog?.category}</div>
     </h2>
     <p>{blog?.short_description}</p>
     <div className="card-actions justify-end">
-    <Link to={`/details/${blog?._id}`}><button className="btn btn-outline btn-secondary">Details</button> </Link>
-      <button onClick={handlelist} className="btn btn-outline btn-secondary">wishlist</button>
+    <Link to={`/details/${blog?._id}`}><button className="btn btn-[12px] btn-outline btn-info ">Details</button> </Link>
+      <button onClick={handlelist} className="btn btn-[12px] btn-outline btn-info ">wishlist</button>
     </div>
   </div>
 </div>

@@ -46,16 +46,16 @@ const Blogcard = ({blog}) => {
       data-aos-anchor-placement="top-bottom">
         <div  className=' overflow-x-hidden '>
             <div className="card w-full h-[500px]  bg-base-100 shadow-xl">
-  <figure><img src= {blog?.image} alt="Shoes" className='w-full h-[250px]' /></figure>
+  <figure><img src= {blog?.image} alt="Shoes" className='w-full h-[200px]' /></figure>
   <div className="card-body">
     <h2 className="card-title">
      {blog?.title || <Skeleton count={10}/>}
-      <div className="badge text-xl font-samibold p-3 badge-secondary">{blog?.category}</div>
+      <div className="badge text-xl font-samibold p-3 bg-[#17ADF8]">{blog?.category}</div>
     </h2>
     <p>{blog?.short_description}</p>
     <div className="card-actions justify-end">
-    <Link to={`/details/${blog?._id}`}><button className="btn btn-outline btn-secondary">Details</button> </Link>
-    <button onClick={handlelist} className="btn btn-outline btn-secondary">wishlist</button>
+    <Link to={`/details/${blog?._id}`}><button className="btn btn-[12px] btn-outline btn-info  ">Details</button> </Link>
+    <button onClick={handlelist} className="btn btn-[12px] btn-outline btn-info">wishlist</button>
     </div>
   </div>
 </div>

@@ -1,0 +1,27 @@
+[
+    {
+      "name": "John Doe",
+      "feedback": "Great service! The staff was very helpful and friendly.",
+      "rating": 5,
+      "img": "https://i.ibb.co/bdm5Vrs/Ashikur-Rahman-Ovi.jpg"
+    },
+    {
+      "name": "Jane Smith",
+      "feedback": "The product quality is excellent. I highly recommend it!",
+      "rating": 4,
+      "img": "https://i.ibb.co/zQCsyp6/ovi-3.png"
+    },
+ 
+    {
+      "name": "Alice Williams",
+      "feedback": "The product quality is excellent. I highly recommend it!",
+      "rating": 5,
+      "img": "https://i.ibb.co/fHg7nZp/download-1.jpg"
+    },
+    {
+      "name": "Charlie Brown",
+      "feedback": "Fast shipping and great communication. Will buy again!",
+      "rating": 4,
+      "img": "https://i.ibb.co/qCX9j3j/download-2.jpg"
+    }
+  ]

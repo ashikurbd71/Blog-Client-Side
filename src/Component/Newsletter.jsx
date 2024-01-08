@@ -1,9 +1,9 @@
 import React from "react";
 import bg from "../../public/blcard-bg.png";
 import Lottie from "lottie-react";
-import news from '../assets/news.json'
+import news from '../../public/banner-img.png'
 import toast from "react-hot-toast";
-import { motion } from "framer-motion"
+
 
 const Newsletter = () => {
 
@@ -18,18 +18,16 @@ toast.success('Thank you for subscribing to our newsletter')
      }
   return (
     <div
-      className=" "
+      
       style={{
-        backgroundImage: `url(${bg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundColor:'#EBECEE'
       }}
     >
       <div className="max-w-[1200px] mx-auto px-5 lg:px-0" >
         <div className="text-center  py-10 " data-aos="zoom-out-right">
-          <h1 className="font-bold lg:text-4xl text-2xl">N E W S L E T T E R</h1>
+          <h1 className="font-bold text-[#17ADF8] lg:text-4xl text-2xl">N E W S L E T T E R</h1>
           <div className="flex justify-center">
-          <p className="my-3 text-xl  w-[70%]">
+          <p className="my-3 lg:text-xl text-black lg:w-[70%]">
             Clearly convey the main theme or focus of your newsletter in the
             title. Subscribers should instantly understand what the newsletter
             is about.
@@ -45,7 +43,7 @@ toast.success('Thank you for subscribing to our newsletter')
        < div data-aos="fade-right"
      data-aos-offset="300"
      data-aos-easing="ease-in-sine">
-  <Lottie animationData={news}  className="flex-1"></Lottie>
+  <img src={news} alt="" />
   
        </div>
 
@@ -64,7 +62,7 @@ toast.success('Thank you for subscribing to our newsletter')
         </div>
         
         <div className="form-control mt-6">
-        <button className="btn btn-outline text-2xl fon-bold btn-secondary"><input type="button" value="Subcribe" /></button>
+        <button className="btn btn-[12px] btn-outline btn-info text-lg"><input type="button" value="Subcribe" /></button>
         </div>
       </form>
  </div>

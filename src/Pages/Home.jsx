@@ -7,6 +7,7 @@ import Contact from '../Component/Contact';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 import Loading from '../Component/loading';
+import Testimonial from '../Component/Testimonial';
 
 
 const Home = () => {
@@ -29,6 +30,9 @@ const Home = () => {
            </div>
            <div>
            <Contact/>
+           </div>
+           <div>
+            <Testimonial/>
            </div>
         
         </div>

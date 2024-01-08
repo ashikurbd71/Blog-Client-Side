@@ -1,31 +1,24 @@
 import React from "react";
 import bg from "../../public/about.jpg";
 import about from "../../public/about-img.png";
-import bg1 from "../../public/blcard-bg.png";
-import { motion } from "framer-motion"
+import { CiFacebook } from "react-icons/ci";
+import { CiInstagram } from "react-icons/ci";
+import { FaTwitter, FaWhatsapp } from "react-icons/fa";
 const About = () => {
   return (
     <>
-      <div
-        className="w-full bg-fixed h-[500px]"
-        style={{
-          backgroundImage: `url(${bg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <h1 className="text-5xl text-black font-bold text-center flex justify-center pt-44">
-          {" "}
-          ABOUT
-        </h1>
-      </div>
-
+      <div className="text-center  py-10 " data-aos="zoom-out-right">
+          <h1 className="font-bold text-[#17ADF8] lg:text-4xl text-2xl">A B O U T U S</h1>
+          <div className="flex justify-center">
+          <p className="my-3 lg:text-xl text-black  lg:w-[70%]">
+          Uncover the essence of NOVANOTES. Passionate about innovation and empowerment since 2021, we craft excellence. Join us on a journey of impact and inspiration.
+          </p>
+          </div>
+        </div>
       <div
         className="flex  lg:flex-row flex-col px-10 justify-between items-center"
         style={{
-          backgroundImage: `url(${bg1})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundColor:'#EBECEE'
         }}
       >
         <div  data-aos="fade-right"
@@ -49,9 +42,20 @@ const About = () => {
             audience by sharing your enthusiasm and commitment.Share your
             personal or brand story. Explain the journey that led you to start
             the blog. Highlight your motivations, experiences, or expertise in
-            the niche you're covering.
+            the niche you're covering,read more.....
           </p>
+
+          <div className="flex justify-center items-center text-[#17ADF8] gap-4 pt-5 text-4xl">
+
+           <CiFacebook/>
+           <CiInstagram/>
+           <FaWhatsapp/>
+           <FaTwitter/>
+           </div>
+
         </div>
+
+           
       </div>
     </>
   );

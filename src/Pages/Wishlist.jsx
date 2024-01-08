@@ -42,12 +42,12 @@ const Wishlist = () => {
     return (
         <>
          <div className='bg-fixed h-full'style={{
-        backgroundImage: `url(${bg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
+        // backgroundImage: `url(${bg})`,
+        // backgroundSize: "cover",
+        // backgroundPosition: "center",
       }}>
          <div className="text-center py-10 space-y-3 ">
-        <h1 className="lg:text-4xl text-3xl  font-bold">Y O U R B L O G S</h1>
+        <h1 className="lg:text-4xl text-3xl  font-bold text-[#007CFD]">Y O U R B L O G S</h1>
          <div className="flex justify-center">
          <p className="text-xl w-[70%] ">
           Ensure that the short description accurately represents the content of

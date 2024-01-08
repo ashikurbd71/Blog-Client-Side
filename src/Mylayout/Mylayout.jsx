@@ -34,7 +34,7 @@ const Mylayout = ({children}) => {
       <div className="flex-1  px-2 mx-2">
 
    <img src={logo} alt="" className='w-8' />
-   <Link to={'/'}><h1 className='lg:text-2xl text-lg font-bold'>SQUARESPACE</h1></Link>
+   <Link to={'/'}><h1 className='lg:text-2xl text-lg font-bold'>NOVANOTES</h1></Link>
 
       </div>
       <div className="flex-none hidden lg:block">

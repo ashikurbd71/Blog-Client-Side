@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
-import bg from '../../public/cover-all.jpg'
+import bg from '../../public/banner-2.png'
 import Allblogscard from '../Component/Allblogscard';
 import {  useEffect, useState } from 'react';
-import bg1 from '../../public/blcard-bg.png'
+import Typed from 'react-typed';
 import Swal from 'sweetalert2';
 
 import Loading from '../Component/loading';
@@ -75,16 +75,26 @@ const Allblog = () => {
           }}>
          
        
-       <div className='lg:pt-28 pt-8'>
+       <div className='lg:pt-32 pt-28'>
 
        <div  data-aos="fade-right"
      data-aos-offset="300"
      data-aos-easing="ease-in-sine" className='flex justify-center'>
-       <p className='lg:text-2xl text-xl text-center font-samibold w-[60%] text-white'>Welcome to our one-stop shop, where versatility meets variety! Explore
-          a world of endless choices at SQUARESPACE. Discover the perfect blend of quality,
-          style, and affordability as you navigate through our diverse product
-          range. Whatever you seek, find it here at SQUARESPACE. Your
-          go-to destination for all things exceptional.</p>
+      <h1 className="lg:text-6xl text-5xl pb-3 font-bold  text-center text-black">
+          
+          <Typed
+                strings={[
+                    'Find Your  Blog.',
+                   
+               ]}
+                    typeSpeed={40}
+                    backSpeed={50}
+                 
+                    loop >
+                 
+                </Typed>
+          
+          </h1>
        </div>
 
 
@@ -110,7 +120,7 @@ const Allblog = () => {
     </select>
 
        
-        <button onClick={handlechngs}  className="btn rounded-r-none btn-primary absolute bg-[#E2136E] border-none rounded-l-none">Filter</button>
+        <button onClick={handlechngs}  className="btn rounded-r-none btn-primary absolute bg-[#17ADF8] border-none rounded-l-none">Filter</button>
         </div>
    
     </div>
@@ -123,7 +133,7 @@ const Allblog = () => {
      placeholder="Search by title"
    
      className="input input-bordered rounded-none lg:w-[400px] lg:pr-16 p-5" /> 
-  <button onClick={handletitle}  className="btn btn-primary rounded-r-none  absolute bg-[#E2136E] border-none rounded-l-none">Search</button>
+  <button onClick={handletitle}  className="btn btn-primary rounded-r-none  absolute bg-[#17ADF8] border-none rounded-l-none">Search</button>
         </div>
         </div>
  </div>
@@ -134,9 +144,9 @@ const Allblog = () => {
         </div>
 
          <div className='  ' style={{
-            backgroundImage: `url(${bg1})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
+            // backgroundImage: `url(${bg1})`,
+            // backgroundSize: "cover",
+            // backgroundPosition: "center",
           }}>
 
             {

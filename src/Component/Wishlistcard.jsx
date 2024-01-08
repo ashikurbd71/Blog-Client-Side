@@ -64,11 +64,11 @@ const Wishlistcard = ({wishcard,refetch,}) => {
   <div className="card-body flex-1">
     <h2 className="card-title">{wishcard?.title}</h2>
 
-    <div className="badge text-xl font-samibold p-3 badge-secondary">{wishcard?.category}</div>
+    <div className="badge text-xl font-samibold p-3 bg-[#007CFD]">{wishcard?.category}</div>
     <p>{wishcard?.short_description}</p>
     <div className="card-actions justify-end">
-   <Link to={`/details/${wishcard?.blog_id}`}> <button className="btn btn-outline btn-secondary">Details</button> </Link>
-      <button onClick={() => hanledelete(wishcard?._id)} className="btn btn-outline btn-secondary">Remove</button>
+   <Link to={`/details/${wishcard?.blog_id}`}> <button className="btn btn-[12px] btn-outline btn-info">Details</button> </Link>
+      <button onClick={() => hanledelete(wishcard?._id)} className="btn btn-[12px] btn-outline btn-info">Remove</button>
     </div>
   </div>
 </div>
